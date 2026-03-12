@@ -1,20 +1,20 @@
 #!/bin/bash
 # ===========================================================
-# ANA 4315 - Introduction to Bioinformatics CA1
+# ANA4315-BIOINFORMATICS-GROUP-16
 # Bash Automation Script
 # Clones repo, runs all scripts, and generates CSV output
 # ===========================================================
 
 # ---------- CONFIGURATION ----------
-REPO_URL="https://github.com/yourgroupname/ana4315-ca1.git"
-REPO_DIR="ana4315-ca1"
+REPO_URL="https://github.com/GROUP 16/ANA4315.git"
+REPO_DIR="ANA4315-GROUP 16"
 OUTPUT_DIR="output"
 CSV_FILE="$OUTPUT_DIR/group_data.csv"
 SCRIPTS_DIR="scripts"
 # ------------------------------------
 
 echo "=========================================="
-echo " ANA 4315 CA1 - Automation Script"
+echo " ANA4315-GROUP 16 - Automation Script"
 echo "=========================================="
 
 # Step 1: Clone the repository
