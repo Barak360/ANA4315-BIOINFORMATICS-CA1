@@ -6,8 +6,8 @@
 # ===========================================================
 
 # ---------- CONFIGURATION ----------
-REPO_URL="https://github.com/GROUP 16/ANA4315.git"
-REPO_DIR="ANA4315-GROUP 16"
+REPO_URL="https://github.com/Barak360/ANA4315-BIOINFORMATICS-GROUP-16.git"
+REPO_DIR="ANA4315-BIOINFORMATICS-GROUP-16"
 OUTPUT_DIR="output"
 CSV_FILE="$OUTPUT_DIR/group_data.csv"
 SCRIPTS_DIR="scripts"
@@ -38,7 +38,7 @@ cd "$REPO_DIR"
 mkdir -p "$OUTPUT_DIR"
 
 # Step 3: Write CSV header
-echo "Name,Email,Slack Username,Area of Interest" > "$CSV_FILE"
+echo "Name,Email,GitHub Username,Area of Interest,Programming Language" > "$CSV_FILE"
 echo ""
 echo "[2/4] CSV file initialized at $CSV_FILE"
 
@@ -48,51 +48,52 @@ echo "[3/4] Running scripts..."
 
 run_script_and_capture() {
     local OUTPUT="$1"
+    local LANG="$2"
 
     # Parse output lines
     NAME=$(echo "$OUTPUT"     | sed -n '1p' | tr -d '\r')
     EMAIL=$(echo "$OUTPUT"    | sed -n '2p' | tr -d '\r')
-    SLACK=$(echo "$OUTPUT"    | sed -n '3p' | tr -d '\r')
+    GITHUB=$(echo "$OUTPUT"   | sed -n '3p' | tr -d '\r')
     INTEREST=$(echo "$OUTPUT" | sed -n '4p' | tr -d '\r')
 
-    echo "  Captured: $NAME | $EMAIL | $SLACK | $INTEREST"
-    echo "\"$NAME\",\"$EMAIL\",\"$SLACK\",\"$INTEREST\"" >> "$CSV_FILE"
+    echo "  Captured: $NAME | $EMAIL | $GITHUB | $INTEREST | $LANG"
+    echo "\"$NAME\",\"$EMAIL\",\"$GITHUB\",\"$INTEREST\",\"$LANG\"" >> "$CSV_FILE"
 }
 
-# --- Python script ---
-if [ -f "$SCRIPTS_DIR/barak_johnson.py"]; then
-    echo "  Running Python script..."
+# --- Python script (Barak Johnson) ---
+if [ -f "$SCRIPTS_DIR/barak_johnson.py" ]; then
+    echo "  Running Python script (Barak Johnson)..."
     OUT=$(python3 "$SCRIPTS_DIR/barak_johnson.py" 2>/dev/null)
-    run_script_and_capture "$OUT"
+    run_script_and_capture "$OUT" "Python"
 fi
 
-# --- R script ---
-if [ -f "$SCRIPTS_DIR/member2.R"]; then
-    echo "  Running R script..."
-    OUT=$(Rscript "$SCRIPTS_DIR/member2.R" 2>/dev/null)
-    run_script_and_capture "$OUT"
+# --- R script (Salihu Usman Muhammad) ---
+if [ -f "$SCRIPTS_DIR/salihu_usman.R" ]; then
+    echo "  Running R script (Salihu Usman Muhammad)..."
+    OUT=$(Rscript "$SCRIPTS_DIR/salihu_usman.R" 2>/dev/null)
+    run_script_and_capture "$OUT" "R"
 fi
 
-# --- Perl script ---
-if [ -f "$SCRIPTS_DIR/member3.pl"]; then
-    echo "  Running Perl script..."
-    OUT=$(perl "$SCRIPTS_DIR/member3.pl" 2>/dev/null)
-    run_script_and_capture "$OUT"
+# --- JavaScript script (Joshua Ezekiel) ---
+if [ -f "$SCRIPTS_DIR/joshua_ezekiel.js" ]; then
+    echo "  Running JavaScript script (Joshua Ezekiel)..."
+    OUT=$(node "$SCRIPTS_DIR/joshua_ezekiel.js" 2>/dev/null)
+    run_script_and_capture "$OUT" "JavaScript"
 fi
 
-# --- JavaScript script ---
-if [ -f "$SCRIPTS_DIR/member4.js" ]; then
-    echo "  Running JavaScript script..."
-    OUT=$(node "$SCRIPTS_DIR/member4.js" 2>/dev/null)
-    run_script_and_capture "$OUT"
+# --- Java script (Sulaiman Musa) ---
+if [ -f "$SCRIPTS_DIR/sulaiman_musa.java" ]; then
+    echo "  Compiling and running Java script (Sulaiman Musa)..."
+    javac "$SCRIPTS_DIR/sulaiman_musa.java" -d "$SCRIPTS_DIR/" 2>/dev/null
+    OUT=$(java -cp "$SCRIPTS_DIR" sulaiman_musa 2>/dev/null)
+    run_script_and_capture "$OUT" "Java"
 fi
 
-# --- Java script ---
-if [ -f "$SCRIPTS_DIR/member5.java" ]; then
-    echo "  Compiling and running Java script..."
-    javac "$SCRIPTS_DIR/member5.java" -d "$SCRIPTS_DIR/" 2>/dev/null
-    OUT=$(java -cp "$SCRIPTS_DIR" member5 2>/dev/null)
-    run_script_and_capture "$OUT"
+# --- Perl script (Mercy Moses) ---
+if [ -f "$SCRIPTS_DIR/mercy_moses.pl" ]; then
+    echo "  Running Perl script (Mercy Moses)..."
+    OUT=$(perl "$SCRIPTS_DIR/mercy_moses.pl" 2>/dev/null)
+    run_script_and_capture "$OUT" "Perl"
 fi
 
 # Step 5: Display result
@@ -103,4 +104,4 @@ echo "=========================================="
 echo " OUTPUT: $CSV_FILE"
 echo "=========================================="
 cat "$CSV_FILE"
-echo "=====================================
+echo "=========================================="
