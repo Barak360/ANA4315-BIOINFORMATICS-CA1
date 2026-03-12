@@ -40,28 +40,27 @@ demonstrates the use of essential bioinformatics practices including:
 - **Perl** - Mercy Moses
 
 ## Repository Structure
-ANA4315-Bioinformatics-CA1/
-├── README.md
-├── scripts/
-│   ├── barak_johnson.py
-│   ├── salihu_usman.R
-│   ├── joshua_ezekiel.js
-│   ├── sulaiman_musa.java
-│   └── mercy_moses.pl
-├── output/
-│   └── results.csv
-└── automate.sh
+- README.md
+- scripts/barak_johnson.py
+- scripts/salihu_usman.R
+- scripts/joshua_ezekiel.js
+- scripts/sulaiman_musa.java
+- scripts/mercy_moses.pl
+- output/results.csv
+- automate.sh
+
 ## How to Run
 Clone the repository and run the Bash automation script:
-```bash
-git clone https://github.com/your-username/ANA4315-Bioinformatics-CA1.git
-cd ANA4315-Bioinformatics-CA1
-bash automate.sh
-The script will automatically execute all member scripts and
+
+    git clone https://github.com/Barak369/ANA4315-Bioinformatics-CA1.git
+    cd ANA4315-BIOINFORMATICS-GROUP16
+    bash automate.sh
+
+The script will automatically execute all member scripts and 
 generate the CSV output file in the output/ directory.
-Course Information
-Course: ANA4315 - Introduction to Bioinformatics
-Lecturer: Dr. Umar Ahmad
-Institution: Sa'adu Zungur University (SAZU), Bauchi State
-Submission Deadline: 15th March 2026
----
+
+## Course Information
+- **Course:** ANA4315 - Introduction to Bioinformatics
+- **Lecturer:** Dr. Umar Ahmad
+- **Institution:** Sa'adu Zungur University (SAZU), Bauchi State
+- **Submission Deadline:** 15th March 2026
