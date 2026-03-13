@@ -1,2 +1,4 @@
-console.log("name,email,username,area of interest, programming language");
-console.log("joshua ezekiel, joshuaezekielchibi@gmail.com,@joshuaezekielchibi-rgb, proteomics, JavaScript");
+console.log("Joshua Ezekiel")
+console.log("joshuaezekielchibi@gmail.com")
+console.log("@joshuaezekielchibi-rgb")
+console.log("Proteomics")
