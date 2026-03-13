@@ -1,2 +1,4 @@
-print("Name,email,username,area of interest,programming language")
-print("Barak johnson,barakjohnson360@gmail.com,@Barak360,genomics,python")
+print("Barak Johnson")
+print("barakjohnson360@gmail.com")
+print("@Barak360")
+print("Genomics")
